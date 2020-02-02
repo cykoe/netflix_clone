@@ -57,12 +57,10 @@
         }
         
         .poster {
-            height: 40vh;
-            margin: 0 2em;
+            margin: 20vh 2em 7vh;
         }
         
         .poster-title {
-            margin-top: 20vh;
             font-size: 2em;
             letter-spacing: 0.2em;
             padding: 0.8em 0;
@@ -99,18 +97,73 @@
         }
 
         .main {
-                        margin: 0 2em;
+            position: relative;
+        }
+        
+        .main .tag {
+            font-weight: bold;
+            font-size: 1.2em;
+            padding: 0 2em;
         }
         
         .carousel {
             display: flex;
             flex-wrap: nowrap;
+            overflow: hidden;
+            margin-bottom: 2.9em;
+            margin: 0 2em;
+        }
+        
+        .carousel-list {
+            display: flex;
+            transition: transform 0.5s ease-out;
         }
         
         .carousel img {
-            height: 15em;
+            height: 11em;
+            padding: 0 0.2em;
+        }
+        
+        .carousel img:nth-child(1) {
+            padding-left: 0
         }
     
+        
+        .handle {
+            width: 2em;
+            cursor: pointer;
+            height: 11em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        
+        .handlePrev {
+            position: absolute;
+            left: 0;
+        }
+        
+        .handleNext {
+            position: absolute;
+            right: 0;
+        }
+        
+        .handleNext b:before {
+            content: 'N';
+        }
+        
+        .handlePrev b:before {
+            content: 'P';
+        }
+        
+        .move-left {
+            transform: translateX(-50%);
+        }
+        
+        .move-right {
+            transform: translateX(50%);
+        }
     </style>
 </head>
 <body>
@@ -152,13 +205,41 @@
     <section class='main'>
        <div class="tag">New Releases</div>
         <div class="carousel">
-        <img src="https://assets.brand.microsites.netflix.io/assets/1ed15bca-b389-11e7-9274-06c476b5c346_cm_800w.png?v=33" alt="">
-        <img src="https://assets.brand.microsites.netflix.io/assets/1ed15bca-b389-11e7-9274-06c476b5c346_cm_800w.png?v=33" alt="">
-        <img src="https://assets.brand.microsites.netflix.io/assets/1ed15bca-b389-11e7-9274-06c476b5c346_cm_800w.png?v=33" alt="">
-        <img src="https://assets.brand.microsites.netflix.io/assets/1ed15bca-b389-11e7-9274-06c476b5c346_cm_800w.png?v=33" alt="">
-        <img src="https://assets.brand.microsites.netflix.io/assets/1ed15bca-b389-11e7-9274-06c476b5c346_cm_800w.png?v=33" alt="">
+            <span class="handle handlePrev"><b></b></span>
+               <div class="carousel-list">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRKUM9EGJdQepfRNAIJzLM0fcD1VTOy-02-SAmj_IPCI_w1C0j6" alt="">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRKUM9EGJdQepfRNAIJzLM0fcD1VTOy-02-SAmj_IPCI_w1C0j6" alt="">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRKUM9EGJdQepfRNAIJzLM0fcD1VTOy-02-SAmj_IPCI_w1C0j6" alt="">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRKUM9EGJdQepfRNAIJzLM0fcD1VTOy-02-SAmj_IPCI_w1C0j6" alt="">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRKUM9EGJdQepfRNAIJzLM0fcD1VTOy-02-SAmj_IPCI_w1C0j6" alt="">
+                </div>
+            <span class="handle handleNext"><b></b></span>
         </div> 
     </section>
+    
+    <script>
+        const prevButton = document.querySelector('.handlePrev');
+        const nextButton = document.querySelector('.handleNext');
+        const imageSection = document.querySelector('.carousel-list');
+        
+        function moveImages(...dir) {
+            imageSection.className += dir[0];
+            imageSection.classList.remove(dir[1]);
+
+        }
+        
+        function onPrevClick() {
+            return moveImages(' move-left', 'move-right');
+        }
+        
+        function onNextClick() {
+            return moveImages(' move-right', 'move-left');
+        }
+        
+
+        prevButton.addEventListener('click', onPrevClick);
+        nextButton.addEventListener('click', onNextClick);
+    </script>
     
 </body>
 </html>
