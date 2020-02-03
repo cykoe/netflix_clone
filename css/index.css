@@ -1,0 +1,158 @@
+* {
+  font-family: "Works Sans", sans-serif;
+  box-sizing: border-box;
+}
+
+html {
+  background-image: linear-gradient(black, grey);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-size: 16px;
+}
+
+body {
+  color: white;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  line-height: 2em;
+  padding: 0 0.7em;
+}
+
+.navigation-shows, .navigation-buttons {
+  display: flex;
+}
+
+.navigation-shows ul, .navigation-buttons ul {
+  display: flex;
+}
+
+.navigation-shows ul li, .navigation-buttons ul li {
+  display: inline;
+  line-height: 2em;
+  padding: 0 0.5em;
+}
+
+.logo {
+  height: 4em;
+}
+
+.navigation-buttons ul li img {
+  width: 2em;
+  height: 2em;
+}
+
+.poster {
+  margin: 20vh 2em 7vh;
+}
+
+.poster-title {
+  font-size: 2em;
+  letter-spacing: 0.2em;
+  padding: 0.8em 0;
+  font-weight: bold;
+}
+
+.poster-subtitle {
+  margin: 0.8em 0;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+.poster-content {
+  font-size: 1em;
+  width: 32%;
+  margin: 0.8em 0;
+}
+
+.poster-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button {
+  background-color: black;
+  border-radius: 0.5em;
+  display: inline-block;
+}
+
+.button div {
+  margin: 0.5em 2em;
+  font-weight: bold;
+}
+
+.main {
+  position: relative;
+}
+
+.main .tag {
+  font-weight: bold;
+  font-size: 1.2em;
+  padding: 0 2em;
+}
+
+.carousel {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  margin: 0 2em 3.9em;
+}
+
+.carousel-list {
+  display: flex;
+  transition: transform 0.5s ease-out;
+  transform: translateX(0px);
+}
+.carousel-list img {
+  transition: transform 0.5s ease-in;
+}
+
+.carousel img {
+  height: 11em;
+  padding: 0 0.2em;
+}
+
+.carousel img:nth-child(1) {
+  padding-left: 0;
+}
+
+.handle {
+  width: 2em;
+  cursor: pointer;
+  height: 11em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.handlePrev {
+  position: absolute;
+  left: 0;
+}
+
+.handleNext {
+  position: absolute;
+  right: 0;
+}
+
+.handleNext b:before {
+  content: "N";
+}
+
+.handlePrev b:before {
+  content: "P";
+}
+
+.move-left {
+  transform: translateX(-50%);
+}
+
+.move-right {
+  transform: translateX(50%);
+}
+
+/*# sourceMappingURL=index.css.map */

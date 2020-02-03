@@ -1,0 +1,23 @@
+{
+  "name": "netflix_clone",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "gh-pages -d .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sircharlie/netflix_clone.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sircharlie/netflix_clone/issues"
+  },
+  "homepage": "https://github.com/sircharlie/netflix_clone",
+  "devDependencies": {
+    "gh-pages": "^2.2.0"
+  }
+}
