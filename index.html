@@ -4,172 +4,14 @@
     <meta charset="UTF-8">
     <title>Netflix_Clone</title>
     <link href="https://fonts.googleapis.com/css?family=Work+Sans&display=swap" rel="stylesheet">
-    <style>
-        * {
-            font-family: 'Works Sans', sans-serif;
-            box-sizing: border-box;
-        }
-        
-        html {
-            background-image: linear-gradient(black, grey);
-            margin: 0;
-            padding: 0;
-            min-height: 100vh;
-            font-size: 16px;
-        }
-        
-        body {
-            color: white;
-        }
-    
-        
-        .navigation {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            line-height: 2em;
-            padding: 0 0.7em;
-        }
-        
-        
-        .navigation-shows, .navigation-buttons {
-            display: flex;
-            
-        }
-        
-        .navigation-shows ul, .navigation-buttons ul {
-            display: flex;
-        }
-        
-        .navigation-shows ul li, .navigation-buttons ul li{
-            display: inline;
-            line-height: 2em;
-            padding: 0 0.5em;
-        }
-        
-        .logo { 
-            height: 4em;
-        }
-        
-        .navigation-buttons ul li img {
-            width: 2em;
-            height: 2em;
-        }
-        
-        .poster {
-            margin: 20vh 2em 7vh;
-        }
-        
-        .poster-title {
-            font-size: 2em;
-            letter-spacing: 0.2em;
-            padding: 0.8em 0;
-            font-weight: bold;
-        }
-        
-        .poster-subtitle {
-            margin: 0.8em 0;
-            font-size: 1.3em;
-            font-weight: bold;
-        }
-        
-        .poster-content {
-            font-size: 1.0em;
-            width: 32%;
-            margin: 0.8em 0;
-        }
-        
-        .poster-buttons {
-            display: flex;
-            justify-content: space-between;
-        }
-        
-        .button {
-            background-color: black;
-            border-radius: 0.5em;
-            display: inline-block;
-        }
-        
-        
-        .button div {
-            margin: 0.5em 2.0em;
-            font-weight: bold;
-        }
-
-        .main {
-            position: relative;
-        }
-        
-        .main .tag {
-            font-weight: bold;
-            font-size: 1.2em;
-            padding: 0 2em;
-        }
-        
-        .carousel {
-            display: flex;
-            flex-wrap: nowrap;
-            overflow: hidden;
-            margin-bottom: 2.9em;
-            margin: 0 2em;
-        }
-        
-        .carousel-list {
-            display: flex;
-            transition: transform 0.5s ease-out;
-        }
-        
-        .carousel img {
-            height: 11em;
-            padding: 0 0.2em;
-        }
-        
-        .carousel img:nth-child(1) {
-            padding-left: 0
-        }
-    
-        
-        .handle {
-            width: 2em;
-            cursor: pointer;
-            height: 11em;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        
-        .handlePrev {
-            position: absolute;
-            left: 0;
-        }
-        
-        .handleNext {
-            position: absolute;
-            right: 0;
-        }
-        
-        .handleNext b:before {
-            content: 'N';
-        }
-        
-        .handlePrev b:before {
-            content: 'P';
-        }
-        
-        .move-left {
-            transform: translateX(-50%);
-        }
-        
-        .move-right {
-            transform: translateX(50%);
-        }
-    </style>
+    <link href="css/index.css" rel="stylesheet">
 </head>
 <body>
-    <header class="navigation">
-      <div class="navigation-shows">
-       <img class='logo' src="https://assets.brand.microsites.netflix.io/assets/1ed15bca-b389-11e7-9274-06c476b5c346_cm_800w.png?v=33" alt="Netflix">
+<header class="navigation">
+    <div class="navigation-shows">
+        <img class='logo'
+             src="https://assets.brand.microsites.netflix.io/assets/1ed15bca-b389-11e7-9274-06c476b5c346_cm_800w.png?v=33"
+             alt="Netflix">
         <ul>
             <li>Home</li>
             <li>TV Shows</li>
@@ -177,69 +19,39 @@
             <li>Latest</li>
             <li>My List</li>
         </ul>
-        </div>
-        <div class='navigation-buttons'>
+    </div>
+    <div class='navigation-buttons'>
         <ul>
-            <li><img src="https://img.favpng.com/3/11/18/computer-icons-search-box-desktop-wallpaper-png-favpng-dYyK4e06zzaa2kaBbwaCvVsvw.jpg" alt="search_button"></li>
+            <li><img
+                    src="https://img.favpng.com/3/11/18/computer-icons-search-box-desktop-wallpaper-png-favpng-dYyK4e06zzaa2kaBbwaCvVsvw.jpg"
+                    alt="search_button"></li>
             <li>DVD</li>
-            <li><img src="https://f0.pngfuel.com/png/516/872/black-and-white-round-frame-computer-icons-avatar-user-profile-grapher-png-clip-art.png" alt="avatar"></li>
+            <li><img
+                    src="https://f0.pngfuel.com/png/516/872/black-and-white-round-frame-computer-icons-avatar-user-profile-grapher-png-clip-art.png"
+                    alt="avatar"></li>
         </ul>
-        </div>
-    </header>
-    
-    <section class='poster'>
-        <div class="poster-title">THE STRANGER</div>
-        <div class="poster-subtitle">Watch Season 1 Now</div>
-        <div class="poster-content">He has the perfect family. The perfect life. Until a stranger with a secret exposed a dangerous web of lies.</div>
-        <div class="poster-buttons">
-            <div>
-                <span class="button"><div>Play</div></span>
-                <span class="button"><div>More Info</div></span>
-            </div>
-            <div>
-                <span class="button"><div>TV-MA</div></span>
-            </div>
-        </div>
-    </section>
-       
-    <section class='main'>
-       <div class="tag">New Releases</div>
-        <div class="carousel">
-            <span class="handle handlePrev"><b></b></span>
-               <div class="carousel-list">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRKUM9EGJdQepfRNAIJzLM0fcD1VTOy-02-SAmj_IPCI_w1C0j6" alt="">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRKUM9EGJdQepfRNAIJzLM0fcD1VTOy-02-SAmj_IPCI_w1C0j6" alt="">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRKUM9EGJdQepfRNAIJzLM0fcD1VTOy-02-SAmj_IPCI_w1C0j6" alt="">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRKUM9EGJdQepfRNAIJzLM0fcD1VTOy-02-SAmj_IPCI_w1C0j6" alt="">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRKUM9EGJdQepfRNAIJzLM0fcD1VTOy-02-SAmj_IPCI_w1C0j6" alt="">
-                </div>
-            <span class="handle handleNext"><b></b></span>
-        </div> 
-    </section>
-    
-    <script>
-        const prevButton = document.querySelector('.handlePrev');
-        const nextButton = document.querySelector('.handleNext');
-        const imageSection = document.querySelector('.carousel-list');
-        
-        function moveImages(...dir) {
-            imageSection.className += dir[0];
-            imageSection.classList.remove(dir[1]);
+    </div>
+</header>
 
-        }
-        
-        function onPrevClick() {
-            return moveImages(' move-left', 'move-right');
-        }
-        
-        function onNextClick() {
-            return moveImages(' move-right', 'move-left');
-        }
-        
+<section class='poster'>
+    <div class="poster-title">THE STRANGER</div>
+    <div class="poster-subtitle">Watch Season 1 Now</div>
+    <div class="poster-content">He has the perfect family. The perfect life. Until a stranger with a secret exposed a
+        dangerous web of lies.
+    </div>
+    <div class="poster-buttons">
+        <div>
+            <span class="button"><div>Play</div></span>
+            <span class="button"><div>More Info</div></span>
+        </div>
+        <div>
+            <span class="button"><div>TV-MA</div></span>
+        </div>
+    </div>
+</section>
 
-        prevButton.addEventListener('click', onPrevClick);
-        nextButton.addEventListener('click', onNextClick);
-    </script>
-    
+<section class='main'>
+</section>
+<script src="js/index.js" type="application/javascript"></script>
 </body>
 </html>
